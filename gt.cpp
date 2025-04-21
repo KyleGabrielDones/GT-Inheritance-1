@@ -60,13 +60,44 @@ class Dancer : public Performer{
 
 int main(){
 
-    Singer first ("Pedro", 18, "Tenor");
-    first.sing(); 
-    Dancer performer ("Jacob", 18, "Hiphop");
-    performer.dance();
+    string choice;
+
+    cout<<"Are you a Singer or a Dancer?: ";
+    cin>>choice;
+
+    string name;
+    int age;
+
+    cout<<"Enter your name: ";
+    cin>>name;
+
+    cout<<"Enter your age: ";
+    cin>>age;
+
+    if (choice == "Singer" || choice == "singer"){
+        string vocalRange;
+        cout<<"ENter your vocal range: ";
+        cin>>vocalRange;
+
+        Singer user(name, age , vocalRange);
+        user.sing();
+    }
+
+    else if (choice == "Dancer" || choice == "dancer"){
+        string danceStyle;
+        cout<<"ENter your dance style: ";
+        cin>>danceStyle;
+
+        Dancer user(name, age , danceStyle);
+        user.dance();
+    }
+
+    else{
+        cout<<"Invalid input"<<endl;
+    }
 
     return 0;
 }
 
 // By: Kyle Gabriel Dones
-// IT2A
+//  IT2A
